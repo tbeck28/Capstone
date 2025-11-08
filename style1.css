@@ -2,6 +2,18 @@
     background-color: tan
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    border: 2px solid;
+    margin-top: 15px;
+}
 
 #contact {
     display: flex;
@@ -24,15 +36,14 @@ form input {
 }
 
 #box {
-    border: 2px solid black;
+
     border-radius: 15px;
     text-align: center;
     margin-top: 55px;
 }
 
 .bigbox {
-    border: 2px solid black;
-    border-radius: 15px;
+    border: none;
 }
 
 nav {
@@ -43,17 +54,34 @@ nav {
     margin-top: 15px;
 }
 
-#rectangle li{
+nav li{
     text-align: center;
     display: inline;
     margin-right: 25px;
 }
 
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 5px solid;
+    margin-top: 15px;
+}
+
+footer li{
+    text-align: center;
+    display: inline;
+    margin-right: 25px;
+}
+
+
+
 @media (max-width:600px) {
     * {
         background-color: #e8dfca;
     }
-    
+
     #zones {
         display: flex;
         flex-direction: column;
@@ -65,16 +93,16 @@ nav {
         border-radius: 15px;
         width: 50%;
     }
-    
+
     .yellow {
-        
+
         border: #FFD93D 5px solid;
         border-radius: 15px;
         width: 50%;
     }
 
     .green {
-        
+
         border: #08CB00 5px solid;
         border-radius: 15px;
         width: 50%;
@@ -85,11 +113,12 @@ nav {
         border-radius: 15px;
         width: 40%;
     }
-    
-    
-    
-    
+
+
+
+
 }
+
 
 
 
@@ -114,7 +143,7 @@ nav {
     }
 
     .yellow {
-        
+
         border: #FFD93D 5px solid;
         border-radius: 15px;
         width: 50%;
@@ -122,7 +151,7 @@ nav {
     }
 
     .green {
-        
+
         border: #08CB00 5px solid;
         border-radius: 15px;
         width: 50%;
@@ -137,9 +166,9 @@ nav {
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
-        
+
     }
-    
+
     #athleteQue {
         display: flex;
         flex-wrap: wrap;
@@ -150,7 +179,7 @@ nav {
     }
 
 
-        
+
     .athlete {
         border: black 5px solid;
         border-radius: 15px;
@@ -166,23 +195,23 @@ nav {
    .mat {
     font-size: 23px;
    }
-   
+
 }
 
 * {
     background-color: tan;
 }
 
-@media (max-width: 440px) {
-    
+@media (max-width: 376px) {
+
     fieldset {
         border: 5px solid black;
         border-radius: 15px;
         width: 10%;
         padding: 20px;
     }
-    
-    
+
+
     form {
         display: flex;
         flex-direction: column;
@@ -202,59 +231,39 @@ nav {
         margin-top: 25px;
         width: 85%;
     }
-    
+
 
     .box {
-        border: 5px solid black;
         border-radius: 20px;
         margin: 10px;
         padding: 15px;
         height: 25%;
     }
-    
+
+    nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 15px;
 }
 
-@media (min-width: 600px) {
+    nav li{
+    text-align: center;
+    display: inline;
+    margin-right: 1px;
+}
 
+    footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 5px solid;
+    margin-top: 15px;
+}
 
-     fieldset {
-        display: flex;
-        flex-direction: row;
-        border: 5px solid black;
-        border-radius: 15px;
-        padding: 20px;
-        justify-content: center;
-        
-    }
-    
-    
-    #form {
-        display: flex;
-        flex-direction: row;
-        margin-left: 10px;
-        padding: 15px;
-    }
-        
-    #form input {
-        border: 5px solid rgb(135, 155, 213);
-        border-radius: 15px;
-        margin-left: 10px;
-    }
-
-    #results {
-        display: flex;
-        justify-content: space-evenly;
-        margin-top: 25px;
-        margin: auto;
-        width: 85%;
-        height: 300px;
-    }
-    
-
-    .box {
-        border: 5px solid black;
-        border-radius: 20px;
-        margin: 10px;
-        padding: 15px;
-    }
+    footer li{
+    text-align: center;
+    display: inline;
+    margin-right: 1px;
 }
