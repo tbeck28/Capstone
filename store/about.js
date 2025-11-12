@@ -1,5 +1,5 @@
 
 export default {
   header: 'About Mat Finder',
-  views: 'about'
+  view: 'about'
 }

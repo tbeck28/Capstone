@@ -1,6 +1,7 @@
 import html from "html-literal";
+import navItem from "./navItem"
 
-export default () => html `
+export default navItems => html`
     <nav>
 
         <ul>
@@ -12,3 +13,4 @@ export default () => html `
 
     </nav>
 `
+// look back at class spa to set up lines 8-11, need to use template literal
