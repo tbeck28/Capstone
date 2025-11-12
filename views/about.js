@@ -1,9 +1,5 @@
+import html from "html-literal"
 export default () => html `
-    <header>
-
-        <h1>About matfinder</h1>
-
-    </header>
 
     <main>
 

@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default () => html `
+export default state => html `
   <header>
 
         <h1>Mat Finder </h1>

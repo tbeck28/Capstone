@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Athlete Information</title>
-    <link rel="stylesheet" href="style1.css">
-</head>
-<body>
+import html from "html-literal";
+export default () => html `
 
-
-        <nav id="rectangle">
-
-        <ul>
-            <li><a href="C:\Users\Certified Swiftie\Desktop\Capstone\athlete\index.html">Home</a></li>
-            <li><a href="C:\Users\Certified Swiftie\Desktop\Capstone\watchList\index.html">Watch List</a></li>
-            <li><a href="C:\Users\Certified Swiftie\Desktop\Capstone\about\index.html">About Us</a></li>
-            <li><a href="C:\Users\Certified Swiftie\Desktop\Capstone\contact\index.html">Contact US</a></li>
-        </ul>
-
-
-    </nav>
-
-    <main>
-
-    <fieldset>
+<fieldset>
         <div id="form">
         <form action="">
 
@@ -78,18 +56,4 @@
         </div>
 
     </div>
-    </main>
-
-    <footer>
-
-         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Watch List</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact US</a></li>
-        </ul>
-
-
-    </footer>
-</body>
-</html>
+`

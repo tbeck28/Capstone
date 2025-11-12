@@ -1,13 +1,7 @@
 import html from "html-literal"
 
-export default() => html`
+export default () => html`
 <main id="main" class="bigbox">
-
-        <header>
-
-        <h1>Contact Us</h1>
-
-        </header>
 
 
         <div id="contact">
