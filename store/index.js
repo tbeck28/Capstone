@@ -1,3 +1,5 @@
-export {default as about} from './about.js'
-export {default as contact} from './contact.js'
-export {default as nav} from './nav.js'
+export { default as about } from './about.js'
+export { default as contact } from './contact.js'
+export { default as nav } from './nav.js'
+export { default as homepage } from './homepage.js'
+export { default as watchlist } from './watch-list.js'

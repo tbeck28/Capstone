@@ -1,9 +1,9 @@
-import Navigo from "navigo";
+import navigo from "navigo";
 import { header, nav, main, footer } from "./components";
 import * as store from './store'
 import { camelCase } from 'lodash'
 
-const router = new Navigo('/')
+const router = new navigo('/')
 
 
 

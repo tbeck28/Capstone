@@ -2,8 +2,127 @@
     background-color: tan
 }
 
+/* #region navigation */
 
-/* Homwpage */
+@media (max-width:600px) {
+    * {
+        background-color: #e8dfca;
+    }
+
+    #zones {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .red {
+        border: #E4004B 5px solid;
+        border-radius: 15px;
+        width: 50%;
+    }
+
+    .yellow {
+
+        border: #FFD93D 5px solid;
+        border-radius: 15px;
+        width: 50%;
+    }
+
+    .green {
+
+        border: #08CB00 5px solid;
+        border-radius: 15px;
+        width: 50%;
+    }
+
+    .athlete {
+        border: black 5px solid;
+        border-radius: 15px;
+        width: 40%;
+    }
+
+
+
+
+}
+
+
+
+@media (min-width:601px) {
+    * {
+        background-color: tan;
+    }
+
+    #zones {
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+        text-align: center;
+    }
+
+
+    .red {
+        border: #E4004B 5px solid;
+        border-radius: 15px;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    .yellow {
+
+        border: #FFD93D 5px solid;
+        border-radius: 15px;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    .green {
+
+        border: #08CB00 5px solid;
+        border-radius: 15px;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    #athleteHeader h1 {
+        border: solid black 2px;
+        border-radius: 10px;
+        text-align: center;
+        width: 10em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+
+    }
+
+    #athleteQue {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border: 5px solid darkblue;
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+
+
+    .athlete {
+        border: black 5px solid;
+        border-radius: 15px;
+        width: 15em;
+        margin: 10PX;
+        text-transform: capitalize;
+    }
+
+   .athlete ul {
+    list-style: none;
+   }
+
+   .mat {
+    font-size: 23px;
+   }
+
+}
 
 
 
@@ -16,7 +135,6 @@ main {
     gap: 15px;
     padding: 15px;
 }
-
 
 
 
@@ -45,6 +163,8 @@ main {
 .innerUl li {
     list-style: none;
 }
+
+/* #endregion */
 
 header {
     display: flex;
@@ -119,6 +239,200 @@ footer li{
     margin-right: 25px;
 }
 
+@media (max-width: 376px) {
+
+    fieldset {
+        border: 5px solid black;
+        border-radius: 15px;
+        width: 10%;
+        padding: 20px;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    #form input {
+        border: 5px solid rgb(135, 155, 213);
+        border-radius: 15px;
+        margin-left: 10px;
+    }
+
+    #results {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 25px;
+        width: 85%;
+    }
+
+
+    .box {
+        border-radius: 20px;
+        margin: 10px;
+        padding: 15px;
+        height: 25%;
+    }
+
+    nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 15px;
+}
+
+    nav li{
+    text-align: center;
+    display: inline;
+    margin-right: 1px;
+}
+
+    footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 5px solid;
+    margin-top: 15px;
+}
+
+    footer li{
+    text-align: center;
+    display: inline;
+    margin-right: 1px;
+}
+
+#navi  {
+    display: flex;
+    flex-direction: column;
+    margin-right: 35px;
+}
+@media (max-width:600px) {
+    * {
+        background-color: #e8dfca;
+    }
+
+    #zones {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .red {
+        border: #E4004B 5px solid;
+        border-radius: 15px;
+        width: 50%;
+    }
+
+    .yellow {
+
+        border: #FFD93D 5px solid;
+        border-radius: 15px;
+        width: 50%;
+    }
+
+    .green {
+
+        border: #08CB00 5px solid;
+        border-radius: 15px;
+        width: 50%;
+    }
+
+    .athlete {
+        border: black 5px solid;
+        border-radius: 15px;
+        width: 40%;
+    }
+
+
+
+
+}
+
+
+
+@media (min-width:601px) {
+    * {
+        background-color: tan;
+    }
+
+    #zones {
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+        text-align: center;
+    }
+
+
+    .red {
+        border: #E4004B 5px solid;
+        border-radius: 15px;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    .yellow {
+
+        border: #FFD93D 5px solid;
+        border-radius: 15px;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    .green {
+
+        border: #08CB00 5px solid;
+        border-radius: 15px;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    #athleteHeader h1 {
+        border: solid black 2px;
+        border-radius: 10px;
+        text-align: center;
+        width: 10em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+
+    }
+
+    #athleteQue {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border: 5px solid darkblue;
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+
+
+    .athlete {
+        border: black 5px solid;
+        border-radius: 15px;
+        width: 15em;
+        margin: 10PX;
+        text-transform: capitalize;
+    }
+
+   .athlete ul {
+    list-style: none;
+   }
+
+   .mat {
+    font-size: 23px;
+   }
+
+}
+
+/*
+
+}
 
 
 @media (max-width:600px) {
@@ -244,70 +558,5 @@ footer li{
 
 * {
     background-color: tan;
-}
+} */
 
-@media (max-width: 376px) {
-
-    fieldset {
-        border: 5px solid black;
-        border-radius: 15px;
-        width: 10%;
-        padding: 20px;
-    }
-
-
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    #form input {
-        border: 5px solid rgb(135, 155, 213);
-        border-radius: 15px;
-        margin-left: 10px;
-    }
-
-    #results {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin-top: 25px;
-        width: 85%;
-    }
-
-
-    .box {
-        border-radius: 20px;
-        margin: 10px;
-        padding: 15px;
-        height: 25%;
-    }
-
-    nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    margin-top: 15px;
-}
-
-    nav li{
-    text-align: center;
-    display: inline;
-    margin-right: 1px;
-}
-
-    footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 5px solid;
-    margin-top: 15px;
-}
-
-    footer li{
-    text-align: center;
-    display: inline;
-    margin-right: 1px;
-}

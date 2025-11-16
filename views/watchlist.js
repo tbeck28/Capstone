@@ -1,5 +1,6 @@
 import html from "html-literal";
-export default () => html `
+
+export default () => html`
  <main>
 
     <div id="zones">
@@ -40,24 +41,7 @@ export default () => html `
 
 
 <div id="athleteQue">
-<button onclick="
-
-
-
-const name = prompt('Athlete name');
-function createNewElement () {
-
-        const newElement = document.createElement('athlete');
-        newElement.className = 'athlete';
-        newElement.innerHTML = name;
-
-
-        const parentElement = document.getElementById('athleteQue');
-        parentElement.appendChild(newElement);
-        newElement.addEventListener('click', newElement());
-    }
-    createNewElement();
-" class="athlete">Add New Athlete</button>
+<button class="athlete">Add New Athlete</button>
 
 <div class="athlete">
     <ul>
