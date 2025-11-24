@@ -1,4 +1,5 @@
 export default {
   header: 'Watch List',
-  view: 'watchlist'
+  view: 'watchlist',
+  athlete: {}
 }

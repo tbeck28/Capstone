@@ -1,68 +1,31 @@
 import html from "html-literal";
 
 export default () => html`
- <main>
+     <main>
 
-    <div id="zones">
-        <div class="red">
-            <h1>active</h1>
-
-            <div class="athlete">
-                <ul>
-                    <h1 class="athleteName">User Data</h1>
-                    <h1 class="mat">mat number 15</h1>
-                    <li>Division: User data</li>
-                    <li>opponent: User Data</li>
-                    <li>make this way more compact  </li>
-                </ul>
-            </div>
-
-
+        <div class="box yellow">
+            <p>Athlete Name</p>
+            <p>mat number</p>
+            <p>division</p>
         </div>
 
-
-        <div class="yellow">
-            <h1>2 matches away</h1>
+         <div class="box green">
+            <p>Athlete Name</p>
+            <p>mat number</p>
+            <p>division</p>
         </div>
 
-
-        <div class="green">
-            <h1> 5+ matches away </h1>
+         <div class="box">
+            <p>Athlete Name</p>
+            <p>mat number</p>
+            <p>division</p>
         </div>
 
+         <div class="box">
+            <p>Athlete Name</p>
+            <p>mat number</p>
+            <p>division</p>
+        </div>
 
-</div>
-
-
-<div id="athleteHeader">
-    <h1>Athlete Que</h1>
-</div>
-
-
-
-<div id="athleteQue">
-<button class="athlete">Add New Athlete</button>
-
-<div class="athlete">
-    <ul>
-        <h1 class="athleteName">User Data</h1>
-        <h1 class="mat">mat number 15</h1>
-        <li>mat number: User Data</li>
-        <li>weight: User Data</li>
-        <li>opponent: User Data</li>
-    </ul>
-</div>
-
-<div class="athlete">
-    <ul>
-        <h1 class="athleteName">User Data</h1>
-        <h1 class="mat">mat number 15</h1>
-        <li>mat number: User Data</li>
-        <li>weight: User Data</li>
-        <li>opponent: User Data</li>
-    </ul>
-</div>
-</div>
-
-</main>
+    </main>
 `
