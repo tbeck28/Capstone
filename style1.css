@@ -2,8 +2,48 @@
     background-color: tan;
 }
 
+/* #region nav */
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+/* #endregion */
+
+/* #region contact us */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* #endregion */
+
+/* #region homepage */
 
 
+#navi ul{
+    display: flex
+    list-style-type: none;
+}
+
+/* #endregion */
+
+/* #region watchlist */
+
+#form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 5px solid blue;
+}
+
+#results {
+    display: flex;
+}
+
+/* #endregion */
 
 /* #region watch list */
  main {
