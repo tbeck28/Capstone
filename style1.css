@@ -2,6 +2,12 @@
     background-color: tan;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
 /* #region nav */
 
 nav ul{
@@ -36,7 +42,6 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 5px solid blue;
 }
 
 #results {
@@ -75,3 +80,94 @@ form {
     /* background-color: hsl(145, 98%, 63%); */
 }
 /* #endregion */
+
+/* #region athlete*/
+#searchSection {
+    display: flex;
+    flex-direction: column;
+}
+
+/* #endregion*/
+
+@media (max-width: 377px) {
+    * {
+        background-color: silver;
+    }
+
+/* #region nav */
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: smaller;
+}
+/* #endregion */
+
+/* #region contact us */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* #endregion */
+
+/* #region homepage */
+
+
+#navi ul{
+    display: flex
+    list-style-type: none;
+}
+
+/* #endregion */
+
+/* #region watchlist */
+
+#form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#results {
+    display: flex;
+}
+
+/* #endregion */
+
+/* #region watch list */
+
+ main {
+    grid-column: 1 / 6;
+    border: 2px solid yellow;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(4, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.box {
+     border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 5px 5px 10px red;
+    padding: 25px;
+    width: 10em;
+    height: 5em;
+    font-size: medium;
+}
+
+.box.yellow {
+    /* box-shadow: 5px 5px 10px yellow; */
+}
+
+.box.green {
+    /* background-color: hsl(145, 98%, 63%); */
+}
+/* #endregion */
+
+
+}
