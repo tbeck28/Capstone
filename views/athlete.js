@@ -1,6 +1,7 @@
 import html from "html-literal";
 export default () => html`
-
+<main>
+    <div id='searchSection'>
 <fieldset>
         <div id="form">
         <form action="">
@@ -24,9 +25,9 @@ export default () => html`
                 <p>mason</p>
                 <p>hannah</p>
                 <p>megan</p>
-        </div>
 
-        </div>
 
     </div>
+</div>
+</main>
 `

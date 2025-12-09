@@ -29,7 +29,7 @@
     "express": "^5.1.0",
     "html-literal": "^1.1.0",
     "lodash": "^4.17.21",
-    "mongoose": "^8.20.1",
+    "mongoose": "^8.20.2",
     "navigo": "^8.11.1",
     "nodemon": "^3.1.11",
     "parcel": "^2.16.1",
