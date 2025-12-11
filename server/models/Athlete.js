@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { type } from "os";
+import match from './Match.js'
 
 const athleteSchema = new mongoose.Schema({
   // a schema is the display model that the data will follow or be presented in
@@ -12,10 +14,9 @@ const athleteSchema = new mongoose.Schema({
     required: true,
     enum: ['gi', 'no-gi', 'gi-absolute', 'no-gi-absolute'] // enum is short for enumerator, meaning it is a white list, the value of division has to match whatever is in the array exactly
   },
-  matNumber: Number,
+  schedule: [match.schema],
   team: {
-    type: String,
-    default: 'Watson Martial Arts'
+    type: String
   }
 
 
