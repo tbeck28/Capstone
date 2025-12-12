@@ -8,9 +8,9 @@ export default () => html`
 
             <h1>Search Menu</h1>
 
-            <label for="athleteName">Athlete Name:<input type="text"></label>
+            <label for="athleteName">Athlete Name:<input type="text" id="name"></label>
 
-            <input type="submit" name="" id="submit-button">Submit
+            <input type="submit" name="" id="submit-button">
 
 
         </form>

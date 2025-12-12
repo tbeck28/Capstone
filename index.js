@@ -3,10 +3,7 @@ import { header, nav, main, footer } from "./components";
 import * as store from './store'
 import * as views from './views'
 import { camelCase } from 'lodash'
-import { match } from "assert";
 import axios from 'axios';
-import { error } from "console";
-import { response } from "express";
 const router = new Navigo('/')
 
 
@@ -44,10 +41,11 @@ router.hooks({
       case "watchlist":
         // New Axios get request utilizing already made environment variable
         axios
-          .get(`${process.env.MAT_FINDER_API_URL}/athletes`)
+          .get(`${process.env.MAT_FINDER_API_URL}/athletes?athlete=${store.athlete.name}`)
           .then(response => {
             console.log(response)
             store.watchlist.athletes = response.data
+            done();
           })
           .catch((error) => {
             console.log("It puked", error);
@@ -55,7 +53,7 @@ router.hooks({
           });
 
         axios
-          .get(`https://avatar.iran.liara.run/username?username=${views / views.watchlist.name}`)
+          .get(`https://avatar.iran.liara.run/username?username=${store.athlete.name}`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             console.log("response", response);
@@ -81,23 +79,11 @@ router.hooks({
     router.updatePageLinks();
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
     if (view === 'athlete') {
-      document.getElementById('addAthlete').addEventListener('click', (event) => {
+      document.querySelector('form').addEventListener('submit', (event) => {
         event.preventDefault();
-        const name = prompt('Enter athlete name')
-        const dispName = document.createElement('h1')
-        dispName.textContent = name  // name of the athlete that the user types in, this has the h1 element in it
-        console.log(dispName)
-
-        const athleteBox = document.createElement('div') // box the name is going to be displayed in
-        athleteBox.className = 'athlete'
-        athleteBox.appendChild(dispName)
-
-        const initials = document.createElement('img')
-        initials.src = `https://avatar.iran.liara.run/username?username=${name}`
-        athleteBox.appendChild(initials)
-
-        const athleteQ = document.getElementById('athleteQue').appendChild(dispName) // athlete que at the bottom of the screen
-        athleteQ.appendChild(athleteBox)
+        const name = event.target.elements.name.value
+        console.log(name)
+        store.athlete.name = name
 
       }
       )

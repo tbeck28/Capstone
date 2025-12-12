@@ -1,9 +1,20 @@
 import html from "html-literal";
 
-export default () => html`
+export default (state) => html`
      <main>
 
-        <div class="box yellow">
+    ${console.log(state)}
+    ${state.athletes.map(athlete => {
+    console.log('hello')
+    return `
+         <div class="box">
+            <p>${athlete.athlete}</p>
+            <p>${athlete.schedule[0].matValue}</p>
+            <p>${athlete.division}</p>
+        </div>
+        `
+}).join('')}
+        <!-- <div class="box yellow">
             <p>Athlete Name</p>
             <p>mat number</p>
             <p>division</p>
@@ -25,7 +36,7 @@ export default () => html`
             <p>Athlete Name</p>
             <p>mat number</p>
             <p>division</p>
-        </div>
+        </div> -->
 
-    </main>
-`
+    </main >
+    `
