@@ -10,8 +10,9 @@ export default () => html`
 
             <label for="athleteName">Athlete Name:<input type="text"></label>
 
+            <input type="submit" name="" id="submit-button">Submit
 
-            <label for="gymName">Gym Name:<input type="text"></label>
+
         </form>
         </div>
     </fieldset>
@@ -22,9 +23,7 @@ export default () => html`
         <div id="athName" class="box">
             <h1>athlete name:</h1>
             <div class="smallbox">
-                <p>mason</p>
-                <p>hannah</p>
-                <p>megan</p>
+
 
 
     </div>

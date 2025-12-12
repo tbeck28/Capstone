@@ -1,4 +1,4 @@
-import navigo from "navigo";
+import Navigo from "navigo";
 import { header, nav, main, footer } from "./components";
 import * as store from './store'
 import * as views from './views'
@@ -6,7 +6,8 @@ import { camelCase } from 'lodash'
 import { match } from "assert";
 import axios from 'axios';
 import { error } from "console";
-const router = new navigo('/')
+import { response } from "express";
+const router = new Navigo('/')
 
 
 
@@ -40,10 +41,21 @@ router.hooks({
     // Add a switch case statement to handle multiple routes
     switch (view) {
       // Add a case for each view that needs data from an API
-      case "pizza":
+      case "watchlist":
         // New Axios get request utilizing already made environment variable
         axios
-          .get(`https://sc-pizza-api.onrender.com/pizzas`)
+          .get(`${process.env.MAT_FINDER_API_URL}/athletes`)
+          .then(response => {
+            console.log(response)
+            store.watchlist.athletes = response.data
+          })
+          .catch((error) => {
+            console.log("It puked", error);
+            done();
+          });
+
+        axios
+          .get(`https://avatar.iran.liara.run/username?username=${views / views.watchlist.name}`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             console.log("response", response);
@@ -65,38 +77,38 @@ router.hooks({
 
     render(store[view]);
   },
-  // after: (match) => {
-  //   router.updatePageLinks();
-  //   const view = match?.data?.view ? camelCase(match.data.view) : "home";
-  //   if (view === 'watchlist' || view === 'athlete') {
-  //     document.getElementById('addAthlete').addEventListener('click', (event) => {
-  //       event.preventDefault();
-  //       const name = prompt('Enter athlete name')
-  //       const dispName = document.createElement('h1')
-  //       dispName.textContent = name  // name of the athlete that the user types in, this has the h1 element in it
-  //       console.log(dispName)
+  after: (match) => {
+    router.updatePageLinks();
+    const view = match?.data?.view ? camelCase(match.data.view) : "home";
+    if (view === 'athlete') {
+      document.getElementById('addAthlete').addEventListener('click', (event) => {
+        event.preventDefault();
+        const name = prompt('Enter athlete name')
+        const dispName = document.createElement('h1')
+        dispName.textContent = name  // name of the athlete that the user types in, this has the h1 element in it
+        console.log(dispName)
 
-  //       const athleteBox = document.createElement('div') // box the name is going to be displayed in
-  //       athleteBox.className = 'athlete'
-  //       athleteBox.appendChild(dispName)
+        const athleteBox = document.createElement('div') // box the name is going to be displayed in
+        athleteBox.className = 'athlete'
+        athleteBox.appendChild(dispName)
 
-  //       const initials = document.createElement('img')
-  //       initials.src = `https://avatar.iran.liara.run/username?username=${name}`
-  //       athleteBox.appendChild(initials)
+        const initials = document.createElement('img')
+        initials.src = `https://avatar.iran.liara.run/username?username=${name}`
+        athleteBox.appendChild(initials)
 
-  //       const athleteQ = document.getElementById('athleteQue').appendChild(dispName) // athlete que at the bottom of the screen
-  //       athleteQ.appendChild(athleteBox)
+        const athleteQ = document.getElementById('athleteQue').appendChild(dispName) // athlete que at the bottom of the screen
+        athleteQ.appendChild(athleteBox)
 
-  //     }
-  //     )
-  //   }
+      }
+      )
+    }
 
 
-  //   // add menu toggle to bars icon in nav bar
-  //   document.querySelector(".fa-bars").addEventListener("click", () => {
-  //     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-  //   });
-  // }
+    // add menu toggle to bars icon in nav bar
+    document.querySelector(".fa-bars").addEventListener("click", () => {
+      document.querySelector("nav > ul").classList.toggle("hidden--mobile");
+    });
+  }
 });
 
 router.on({

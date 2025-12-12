@@ -1,6 +1,7 @@
-import { Router } from 'express';
+import { response, Router } from 'express';
 import Athlete from '../models/Athlete.js';
 import { faker } from '@faker-js/faker';
+import { request } from 'http';
 
 // create a new router, this is where the athlete is selected
 const router = Router();
@@ -35,19 +36,53 @@ function generateRandomAthlete() {
 router.post('/', async (request, response) => {
   try {
 
-
     // //  take what the user sent us and search for an athlete from it
     const newAthlete = new Athlete(generateRandomAthlete());
 
     console.log(newAthlete)
     // // add that athlete to our
-    const data = await newAthlete.save()
-    response.json(data)
+    const athletes = await newAthlete.save()
+    response.json(athletes)
   }
   catch (error) {
     console.log(error)
   }
 
 })
+
+// get all the athletes route
+
+router.get("/", async (request, response) => {
+  try {
+    // Store the query params into a JavaScript Object
+    const query = request.query; // Defaults to an empty object {}
+
+    const athletes = await Athlete.find(query);
+
+    response.json(athletes);
+  } catch (error) {
+    // Output error to the console incase it fails to send in response
+    console.log(error);
+
+    return response.status(500).json(error.errors);
+  }
+});
+
+// getting one athlete from the data base:
+
+router.get("/:id", async (request, response) => {
+  try {
+    const athletes = await Athlete.findById(request.params.id);
+
+    if (athletes === null) response.status(404);
+
+    response.json(athletes);
+  } catch (error) {
+    console.log(error);
+    return response.status(500).json(error.errors)
+  }
+});
+
+
 
 export default router
