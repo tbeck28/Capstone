@@ -1,4 +1,5 @@
 export default {
   header: 'Athlete Search',
-  view: 'athlete'
+  view: 'athlete',
+  name: ''
 }
