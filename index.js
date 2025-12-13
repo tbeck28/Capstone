@@ -38,22 +38,31 @@ router.hooks({
     // Add a switch case statement to handle multiple routes
     switch (view) {
       // Add a case for each view that needs data from an API
-      case "watchlist":
-        // New Axios get request utilizing already made environment variable
+      case "athlete":
         axios
-          .get(`${process.env.MAT_FINDER_API_URL}/athletes?athlete=${store.athlete.name}`)
-          .then(response => {
-            console.log(response)
-            store.watchlist.athletes = response.data
+          .get(`https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`).then(response => {
+            console.log('weather response.data', response.data);
+            store.athlete.weather = {
+              city: response.data.name,
+              temp: response.data.main.temp,
+              feelsLike: response.data.main.feels_like,
+              description: response.data.weather[0].main
+            };
+            console.log('Weather response.data', response.data);
             done();
           })
           .catch((error) => {
             console.log("It puked", error);
             done();
           });
+        break
+
+      case "watchlist":
+        // New Axios get request utilizing already made environment variable
+
 
         axios
-          .get(`https://avatar.iran.liara.run/username?username=${store.athlete.name}`)
+          .get(`${store.athlete.name}`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             console.log("response", response);
