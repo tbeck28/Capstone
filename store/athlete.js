@@ -1,5 +1,6 @@
 export default {
   header: 'Athlete Search',
   view: 'athlete',
-  name: ''
+  name: '',
+  weather: {}
 }
