@@ -60,12 +60,13 @@ router.hooks({
       case "watchlist":
         // New Axios get request utilizing already made environment variable
 
-
+        console.log("this is someone somones name: ", store.athlete.name)
         axios
-          .get(`${store.athlete.name}`)
+          .get(`${process.env.MAT_FINDER_API_URL}/athletes?athlete=${store.athlete.name}`)
           .then(response => {
             // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
             console.log("response", response);
+            store.watchlist.athletes = response.data
             done();
           })
           .catch((error) => {
@@ -79,14 +80,37 @@ router.hooks({
       // break is not needed since it is the last condition, if you move default higher in the stack then you should add the break statement.
     }
   },
-  already: (match) => {
+  already: async (match) => {
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
 
+    switch (view) {
+      // Add a case for each view that needs data from an API
+
+      case "watchlist":
+        // New Axios get request utilizing already made environment variable
+
+        console.log("this is someone somones name: ", store.athlete.name)
+        await axios
+          .get(`${process.env.MAT_FINDER_API_URL}/athletes?athlete=${store.athlete.name}`)
+          .then(response => {
+            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
+            console.log("response", response);
+            store.watchlist.athletes = response.data
+            done();
+          })
+          .catch((error) => {
+            console.log("It puked", error);
+            done();
+          });
+        break;
+      default:
+        // We must call done for all views so we include default for the views that don't have cases above.
+        done();
+      // break is not needed since it is the last condition, if you move default higher in the stack then you should add the break statement.
+    }
+
     render(store[view]);
-  },
-  after: (match) => {
-    router.updatePageLinks();
-    const view = match?.data?.view ? camelCase(match.data.view) : "home";
+
     if (view === 'athlete') {
       document.querySelector('form').addEventListener('submit', (event) => {
         event.preventDefault();
@@ -96,7 +120,28 @@ router.hooks({
 
       }
       )
+
     }
+  },
+  after: (match) => {
+
+    const view = match?.data?.view ? camelCase(match.data.view) : "home";
+    if (view === 'athlete') {
+      document.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = event.target.elements.name.value
+        console.log(name)
+        store.athlete.name = name
+
+        router.navigate('watchlist')
+      }
+      )
+      router.updatePageLinks();
+
+
+
+    }
+
 
 
     // add menu toggle to bars icon in nav bar
