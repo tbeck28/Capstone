@@ -11,19 +11,13 @@ export default () => html`
     </div>
 
       <ul id="navi">
-        <li class="link">
-
-          <a href="about.html">About us!</a>
-
+        <li> About Us!<li>
         <ul class="innerUl">
-
           <li class="item">Find out more about mat finder</li>
-
         </ul>
-        </li>
 
 
-        <li class="link"><a href="contact.html">Contact us!</a>
+        <li>Contact us!</li>
           <ul class="innerUl">
             <li>have suggestions or improvements?</li>
             <li>let us know by contacting us</li>
@@ -32,23 +26,10 @@ export default () => html`
         </li>
 
 
-        <li class="link">
-
-          <a href="athlete.html">Athlete Selection</a>
-          <ul class="innerUl">
-            <li>This is where the magic starts</li>
-          </ul>
-
-        </li>
-
-
-        <li class="link"><a href="about.html">Help Me Documentation</a>
-          <ul class="innerUl">
-            <li>first time to the site?</li>
-            <li>visit this page to help you navigate the application</li>
-          </ul>
-
-        </li>
+        <li>Athlete Selection</li>
+        <ul>
+          <li>Select the athlete you want to follow throughout the tournament</li>
+        </ul>
 
 
 
