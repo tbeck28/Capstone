@@ -24,17 +24,6 @@ export default (state) => html`
         </form>
         </div>
     </fieldset>
-
-
-    <div id="results">
-
-        <div id="athName" class="box">
-            <h1>athlete name:</h1>
-            <div class="smallbox">
-
-
-
-    </div>
 </div>
 </main>
 `
