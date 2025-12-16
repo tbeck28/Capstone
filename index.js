@@ -4,7 +4,6 @@ import * as store from './store'
 import * as views from './views'
 import { camelCase } from 'lodash'
 import axios from 'axios';
-import { getDefaultHighWaterMark } from "stream";
 const router = new Navigo('/')
 
 
@@ -38,7 +37,7 @@ router.hooks({
     const view = match?.data?.view ? camelCase(match.data.view) : "homepage"; // previous was 'watchlist'
     // Add a switch case statement to handle multiple routes
     switch (view) {
-      // Add a case for each view that needs data from an API
+
       case "athlete":
         axios
           .get(`https://api.openweathermap.org/data/2.5/weather?APPID=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`).then(response => {
@@ -137,18 +136,36 @@ router.hooks({
         router.navigate('watchlist')
       }
       )
-      router.updatePageLinks();
-
-
 
     }
+    if (view === 'contact') {
+      document.querySelector('form').addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const inputlist = event.target.elements
+
+        const requestData = {
+          Username: inputlist.name.value,
+          message: inputlist.message.value
+        }
+
+        axios
+          .post(`${process.env.MAT_FINDER_API_URL}/suggestionsForm`, requestData)
+          .then(response => {
+            store.contact.comments.push(response.data)
+            // router.navigate('/contact')
+          })
+          .catch(error => {
+            console.log('It puked', error)
+          })
+      })
 
 
 
-    // add menu toggle to bars icon in nav bar
-    document.querySelector(".fa-bars").addEventListener("click", () => {
-      document.querySelector("nav > ul").classList.toggle("hidden--mobile");
-    });
+
+      router.updatePageLinks();
+    }
+
   }
 });
 

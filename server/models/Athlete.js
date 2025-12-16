@@ -12,7 +12,7 @@ const athleteSchema = new mongoose.Schema({
   division: {
     type: String,
     required: true,
-    enum: ['gi', 'no-gi', 'gi-absolute', 'no-gi-absolute'] // enum is short for enumerator, meaning it is a white list, the value of division has to match whatever is in the array exactly
+    enum: ['gi', 'no-gi', 'gi-absolute', 'no-gi-absolute'] // enum is short for enumerator, meaning it is a white list(a collection of approved entities that are permitted in a system), the value of division has to match whatever is in the array exactly
   },
   schedule: [match.schema],
   team: {
