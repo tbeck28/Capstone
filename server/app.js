@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 import athletes from './controllers/athletes.js'
+import suggestionsForm from './controllers/suggestionsForm.js';
 
 // loading environment variables from .env file
 dotenv.config()
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use(cors());
 app.use(logging);
 app.use("/athletes", athletes);
+app.use('/suggestionsForm', suggestionsForm)
 
 app.get('/', (request, response) => {
   response.send('welcome to my app')
